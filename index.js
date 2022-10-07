@@ -11,7 +11,6 @@ const GameState = require('./lib/game-state');
 // Initialize the game state with the proper IO server and words to choose from.
 const gs = new GameState(io, wordsArray);
 
-console.log(gs.currentWord)
 io.on('connection', (socket) => {
   console.log('hello', PORT, socket.id);
   console.log(io.of('/').server.engine.clientsCount);

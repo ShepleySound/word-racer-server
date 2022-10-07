@@ -16,7 +16,7 @@ io.on('connection', (socket) => {
   socket.on('join-game', (name) => {
     console.log(`${name} joined the game!`);
     socket.join('game-room');
-    io.to('game-room').emit('joined-event', name)
+    socket.to('game-room').emit('joined-event', name)
   });
 
 });

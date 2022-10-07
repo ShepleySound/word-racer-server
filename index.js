@@ -4,6 +4,7 @@ require('dotenv').config()
 const PORT = process.env.PORT;
 const io = require('socket.io')(PORT || 3002);
 
+const Player = require('./src/player.js');
 const wordsArray = require('./lib/words.json');
 
 const GameState = require('./lib/game-state');
@@ -22,6 +23,7 @@ io.on('connection', (socket) => {
 
   // Whenever a player joins the game
   socket.on('join-game', (player) => {
+    new Player(player, socket.id);
     console.log(`${player} joined the game!`);
     socket.join('game-room');
     socket.to('game-room').emit('broadcast-joined-event', player);
@@ -33,7 +35,8 @@ io.on('connection', (socket) => {
     console.log('attempt made - ', input, player);
     console.log(gs.currentWord)
     if (input === gs.currentWord) {
-      socket.emit('success');
+      Player.instances[socket.id].incrementScore();
+      socket.emit('success', (Player.instances[socket.id].score));
       socket.to('game-room').emit('broadcast-success', player);
       gs.newWord();
       clearInterval(gs.wordTimer);

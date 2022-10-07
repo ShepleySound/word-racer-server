@@ -23,11 +23,12 @@ io.on('connection', (socket) => {
 
   // Whenever a player joins the game
   socket.on('join-game', (player) => {
+    // To-Do -- Handle receiving a null/undefined player name - maybe give a random identifier?
     new Player(player, socket.id);
-    console.log(`${player} joined the game!`);
+    console.log(`${Player.instances[socket.id].username} joined the game!`);
     socket.join('game-room');
-    socket.to('game-room').emit('broadcast-joined-event', player);
-    socket.emit('game-start');
+    socket.to('game-room').emit('broadcast-joined-event', Player.instances[socket.id].username);
+    socket.emit('game-start', (Player.instances[socket.id].username));
   });
 
   // Whenever a player sends a word attempt during the game session

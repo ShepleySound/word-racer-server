@@ -3,6 +3,8 @@
 class Player {
   constructor(nickname, socketID) {
     this.nickname = nickname;
+    this.userID = Player.generateID();
+    this.username = `${this.nickname}#${this.userID}`;
     this.socketID = socketID;
     this.score = 0;
     Player.instances[socketID] = this;
@@ -12,9 +14,9 @@ class Player {
     this.score += 1;
   }
 
-  static GenerateID() {
+  static generateID() {
     const randomNum = (Math.floor(Math.random() * 2000)).toString(10);
-    randomNum.padStart(4, '0');
+    return randomNum.padStart(4, '0');
   }
 
   static instances = {};

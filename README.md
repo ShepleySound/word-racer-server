@@ -36,6 +36,10 @@ To install/run the application, you will need to have Node.js and npm installed.
 - [ ] Implement tests
 - [ ] Modularize server-side socket code
 
-## Structure Diagram
+<!-- ## Structure Diagram
 
-![Diagram](./cap-phase1.png)
+![Diagram](./cap-phase1.png) -->
+
+## Credits
+
+List of words - [an-array-of-english-words](https://github.com/words/an-array-of-english-words)

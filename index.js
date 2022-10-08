@@ -13,9 +13,6 @@ const GameState = require('./lib/game-state');
 const gs = new GameState(io, wordsArray);
 
 io.on('connection', (socket) => {
-  console.log('hello', PORT, socket.id);
-  console.log(io.of('/').server.engine.clientsCount);
-
   // Whenever a player disconnects
   socket.on('disconnect', () => {
     console.log('A client disconnected.');
@@ -33,8 +30,6 @@ io.on('connection', (socket) => {
 
   // Whenever a player sends a word attempt during the game session
   socket.on('attempt', (input, player) => {
-    console.log('attempt made - ', input, player);
-    console.log(gs.currentWord)
     if (input === gs.currentWord) {
       Player.instances[socket.id].incrementScore();
       socket.emit('success', (Player.instances[socket.id].score));

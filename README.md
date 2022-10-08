@@ -27,15 +27,6 @@ To install/run the application, you will need to have Node.js and npm installed.
     node index.js
   ```
 
-- Run the following commands, in order -
-
-  ```bash
-    npm run watch
-    npm run vendor-one
-    npm run vendor-two
-    npm run driver
-  ```
-
 ## Tests
 
 *To be implemented*

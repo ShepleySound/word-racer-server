@@ -36,7 +36,7 @@ io.on('connection', (socket) => {
       socket.to('game-room').emit('broadcast-success', player);
       gs.newWord();
       clearInterval(gs.wordTimer);
-      gs.wordTimer = setInterval(gs.newWord, 5000);
+      gs.wordTimer = setInterval(gs.newWord, 10000);
     }
   });
 

@@ -6,9 +6,8 @@ Word Racer is a CLI-based typing game created using Socket.IO. The server random
 
 A new word is chosen when the timer runs out or when someone wins the round.
 
-*NOTE: In the application's current state, the server and clients must all be ran on a single host in different terminal sessions.*
-
 Author: [Robert Shepley](https://github.com/shepleysound), [Timothee Odushina](https://github.com/timothee2022)
+
 <!-- Replace URL's and add more necessary links -->
 <!-- - [Tests Report]()
 - [Assignment Pull Request]()

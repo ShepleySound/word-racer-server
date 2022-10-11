@@ -8,10 +8,9 @@ A new word is chosen when the timer runs out or when someone wins the round.
 
 Author: [Robert Shepley](https://github.com/shepleysound), [Timothee Odushina](https://github.com/timothee2022)
 
-<!-- Replace URL's and add more necessary links -->
-<!-- - [Tests Report]()
-- [Assignment Pull Request]()
-- [Heroku Prod Deployment]() -->
+## Deployment
+
+Currently, the server is deployed [here](word-racer-v2-dev.us-west-2.elasticbeanstalk.com) using AWS Elastic Beanstalk. Since it is a plain Socket.IO server, navigating to the deployed link in a browser using HTTP/HTTPS will result in an error.
 
 ## Documentation
 
